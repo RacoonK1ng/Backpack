@@ -686,6 +686,9 @@ static void startServices()
   server.on("/mui.js", WebUpdateSendContent);
   server.on("/scan.js", WebUpdateSendContent);
   server.on("/logo.svg", WebUpdateSendContent);
+  server.on("/ELRS_drone_tracker/tracker.html", WebUpdateSendContent);
+  server.on("/ELRS_drone_tracker/tracker.css", WebUpdateSendContent);
+  server.on("/ELRS_drone_tracker/tracker.js", WebUpdateSendContent);
   server.on("/config", HTTP_GET, GetConfiguration);
   server.on("/networks.json", WebUpdateSendNetworks);
   server.on("/sethome", WebUpdateSetHome);
