@@ -715,6 +715,21 @@ static void startServices()
   server.on("/mavlink", HTTP_GET, WebMAVLinkHandler);
 #endif
 
+static float droneLat = 47.123456;
+static float droneLon = 11.987654;
+static float droneAlt = 120.0;
+
+server.on("/api/position", HTTP_GET, [](AsyncWebServerRequest *request){
+    StaticJsonDocument<128> json;
+    json["lat"] = droneLat;
+    json["lon"] = droneLon;
+    json["alt"] = droneAlt;
+
+    String jsonString;
+    serializeJson(json, jsonString);
+    request->send(200, "application/json", jsonString);
+});
+
   server.onNotFound(WebUpdateHandleNotFound);
 
   for (int i=0 ; i<ARRAY_SIZE(files) ; i++)
