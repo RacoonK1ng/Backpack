@@ -153,7 +153,7 @@ static bool captivePortal(AsyncWebServerRequest *request)
   {
     DBGLN("Request redirected to captive portal");
     request->redirect(String("http://") + toStringIp(request->client()->localIP()));
-    return true;<
+    return true;
   }
   return false;
 }
