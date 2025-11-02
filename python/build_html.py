@@ -60,6 +60,8 @@ def build_common(env, mainfile):
             build_html("p5.js", "P5_JS", out, env)
             build_html("airplane.obj", "PLANE_OBJ", out, env)
             build_binary("texture.gif", "TEXTURE_GIF", out, env)
+            build_html("ELRS_drone_tracker/tracker.css", "TRACKER_CSS", out, env)
+            build_html("ELRS_drone_tracker/tracker.css", "TRACKER_JS", out, env)
     finally:
         if not os.path.exists("include/WebContent.h") or not filecmp.cmp(path, "include/WebContent.h"):
             shutil.copyfile(path, "include/WebContent.h")
@@ -71,5 +73,7 @@ if fnmatch.filter(env['BUILD_FLAGS'], '*TARGET_VRX_BACKPACK*'):
     build_common(env, "vrx_index.html")
 elif fnmatch.filter(env['BUILD_FLAGS'], '*TARGET_TX_BACKPACK*'):
     build_common(env, "txbp_index.html")
+    build_common(env, "ELRS_drone_tracker/tracker.html")
 elif fnmatch.filter(env['BUILD_FLAGS'], '*TARGET_TIMER_BACKPACK*'):
     build_common(env, "timer_index.html")
+    build_common(env, "ELRS_drone_tracker/tracker.html")
