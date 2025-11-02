@@ -169,6 +169,9 @@ static struct {
   {"/mui.js", "text/javascript", (uint8_t *)MUI_JS, sizeof(MUI_JS)},
   {"/scan.js", "text/javascript", (uint8_t *)SCAN_JS, sizeof(SCAN_JS)},
   {"/logo.svg", "image/svg+xml", (uint8_t *)LOGO_SVG, sizeof(LOGO_SVG)},
+  {"/ELRS_drone_tracker/tracker.html", "text/html", (uint8_t *)TRACKER_HTML, sizeof(TRACKER_HTML)},
+  {"/ELRS_drone_tracker/tracker.css", "text/css", (uint8_t *)TRACKER_CSS, sizeof(TRACKER_CSS)},
+  {"/ELRS_drone_tracker/tracker.js", "text/javascript", (uint8_t *)TRACKER_JS, sizeof(TRACKER_JS)},
 #if defined(HAS_HEADTRACKING) || defined(SUPPORT_HEADTRACKING)
   {"/airplane.obj", "text/plain", (uint8_t *)PLANE_OBJ, sizeof(PLANE_OBJ)},
   {"/texture.gif", "image/gif", (uint8_t *)TEXTURE_GIF, sizeof(TEXTURE_GIF)},
